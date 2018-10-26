@@ -1,75 +1,87 @@
-<h2>{{user.name | uppercase}} Details</h2>
+<!--   -->
+<!-- <div *ngFor="let user of users" (click)="onSelect(user)"> -->
+<ul class="users">
+   <li *ngFor="let user of users"
+      [class.selected]="user === selectedUser"
+      (click)="onSelect(user)">
+      <span class="badge">{{user.id}}</span> {{user.name}}
+    </li>
+ </ul>
+ <div *ngIf="selectedUser">
+<h2>{{selectedUser.name | uppercase}} Details</h2>
 <div>
   <label>id:
-    <input [(ngModel)]="user.id" placeholder="id">
+    <input [(ngModel)]="selectedUser.id" placeholder="id">
   </label>
 </div>
 <div>
   <label>name:
-    <input [(ngModel)]="user.name" placeholder="name">
+    <input [(ngModel)]="selectedUser.name" placeholder="name">
   </label>
 </div>
 <div>
   <label>username:
-    <input [(ngModel)]="user.username" placeholder="username">
+    <input [(ngModel)]="selectedUser.username" placeholder="username">
   </label>
 </div>
 <div>
   <label>email:
-    <input [(ngModel)]="user.email" placeholder="email">
+    <input [(ngModel)]="selectedUser.email" placeholder="email">
   </label>
 </div>
 <div><span>address: </span>
   <div>
     <label>street:
-      <input [(ngModel)]="user.address.street" placeholder="street">
+      <input [(ngModel)]="selectedUser.address.street" placeholder="street">
     </label>
   </div>
   <div>
     <label>suite:
-      <input [(ngModel)]="user.address.suite" placeholder="suite">
+      <input [(ngModel)]="selectedUser.address.suite" placeholder="suite">
     </label>
   </div>
   <div>
     <label>city:
-      <input [(ngModel)]="user.address.city" placeholder="city">
+      <input [(ngModel)]="selectedUser.address.city" placeholder="city">
     </label>
   </div>
   <div>
     <label>zipcode:
-      <input [(ngModel)]="user.address.zipcode" placeholder="zipcode">
+      <input [(ngModel)]="selectedUser.address.zipcode" placeholder="zipcode">
     </label>
   </div>
   <div>
     <label>geo:
-      <input [(ngModel)]="user.address.geo" placeholder="geo">
+      <input [(ngModel)]="selectedUser.address.geo" placeholder="geo">
     </label>
   </div>
 </div>
 <div>
   <label>phone:
-    <input [(ngModel)]="user.phone" placeholder="phone">
+    <input [(ngModel)]="selectedUser.phone" placeholder="phone">
   </label>
 </div>
 <div>
   <label>website:
-    <input [(ngModel)]="user.website" placeholder="website">
+    <input [(ngModel)]="selectedUser.website" placeholder="website">
   </label>
 </div>
 <div><span>company: </span>
   <div>
     <label>name:
-      <input [(ngModel)]="user.company.name" placeholder="name">
+      <input [(ngModel)]="selectedUser.company.name" placeholder="name">
     </label>
   </div>
   <div>
     <label>catchPhrase:
-      <input [(ngModel)]="user.company.catchPhrase" placeholder="catchPhrase">
+      <input [(ngModel)]="selectedUser.company.catchPhrase" placeholder="catchPhrase">
     </label>
   </div>
   <div>
     <label>bs:
-      <input [(ngModel)]="user.company.bs" placeholder="bs">
+      <input [(ngModel)]="selectedUser.company.bs" placeholder="bs">
     </label>
   </div>
 </div>
+</div> 
+<!-- </div> -->
