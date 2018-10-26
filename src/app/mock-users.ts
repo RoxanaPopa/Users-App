@@ -9,18 +9,18 @@ export const USERS: User[] = [
       "Bret",
       "Sincere@april.biz",
       new Address(
-        "Kulas Light",
-        "Apt. 556",
-        "Gwenborough",
-        "92998-3874",
+            "Kulas Light",
+            "Apt. 556",
+            "Gwenborough",
+            "92998-3874",
         [-37.3159,81.1496]
       ),
       "1-770-736-8031 x56442",
       "hildegard.org",
       new Company(
-        "Romaguera-Crona",
-        "Multi-layered client-server neural-net",
-        "harness real-time e-markets"
+            "Romaguera-Crona",
+            "Multi-layered client-server neural-net",
+            "harness real-time e-markets"
       )
     ),
     new User(
@@ -78,9 +78,9 @@ export const USERS: User[] = [
         "493-170-9623 x156",
         "kale.biz",
         new Company(
-          "Robel-Corkery",
-          "Multi-tiered zero tolerance productivity",
-          "transition cutting-edge web services"
+            "Robel-Corkery",
+            "Multi-tiered zero tolerance productivity",
+            "transition cutting-edge web services"
         )
     ),
     new User(
