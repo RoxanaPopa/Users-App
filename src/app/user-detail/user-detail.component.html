@@ -1,0 +1,77 @@
+<div *ngIf="user">
+    <h2>{{user.name | uppercase}} Details</h2>
+    <div>
+      <label>id:
+        <input [(ngModel)]="user.id" placeholder="id">
+      </label>
+    </div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="user.name" placeholder="name">
+      </label>
+    </div>
+    <div>
+      <label>username:
+        <input [(ngModel)]="user.username" placeholder="username">
+      </label>
+    </div>
+    <div>
+      <label>email:
+        <input [(ngModel)]="user.email" placeholder="email">
+      </label>
+    </div>
+    <div><span>address: </span>
+      <div>
+        <label>street:
+          <input [(ngModel)]="user.address.street" placeholder="street">
+        </label>
+      </div>
+      <div>
+        <label>suite:
+          <input [(ngModel)]="user.address.suite" placeholder="suite">
+        </label>
+      </div>
+      <div>
+        <label>city:
+          <input [(ngModel)]="user.address.city" placeholder="city">
+        </label>
+      </div>
+      <div>
+        <label>zipcode:
+          <input [(ngModel)]="user.address.zipcode" placeholder="zipcode">
+        </label>
+      </div>
+      <div>
+        <label>geo:
+          <input [(ngModel)]="user.address.geo" placeholder="geo">
+        </label>
+      </div>
+    </div>
+    <div>
+      <label>phone:
+        <input [(ngModel)]="user.phone" placeholder="phone">
+      </label>
+    </div>
+    <div>
+      <label>website:
+        <input [(ngModel)]="user.website" placeholder="website">
+      </label>
+    </div>
+    <div><span>company: </span>
+      <div>
+        <label>name:
+          <input [(ngModel)]="user.company.name" placeholder="name">
+        </label>
+      </div>
+      <div>
+        <label>catchPhrase:
+          <input [(ngModel)]="user.company.catchPhrase" placeholder="catchPhrase">
+        </label>
+      </div>
+      <div>
+        <label>bs:
+          <input [(ngModel)]="user.company.bs" placeholder="bs">
+        </label>
+      </div>
+    </div>
+    </div>
