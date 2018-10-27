@@ -1,9 +1,20 @@
+<h4>All users:</h4>
 <ul class="users">
-   <li *ngFor="let user of users"
-      [class.selected]="user === selectedUser"
-      (click)="onSelect(user)">
+  <li *ngFor="let user of users">
+    <a routerLink="/detail/{{user.id}}">
       <span class="badge">{{user.id}}</span> {{user.name}}
-    </li>
- </ul>
+    </a>
+      <button class="delete" title="delete user"
+      (click)="delete(user)">x</button>
+  </li>
+</ul>
 
- <app-user-detail [user]="selectedUser"></app-user-detail>
+<div>
+    <h4>Add new user:</h4>
+   <label>User name:
+     <input #userName />
+   </label>
+   <button (click)="add(userName.value); userName.value=''">
+     add
+   </button>
+ </div>

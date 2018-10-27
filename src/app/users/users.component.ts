@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../user'
-import { Company } from '../company';
-import { Address } from '../address';
-import {USERS} from '../mock-users';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-users',
@@ -10,33 +8,31 @@ import {USERS} from '../mock-users';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  // user = new User(
-  //   1, 
-  //   "Leanne Graham", 
-  //   "Bret",  
-  //   "Sincere@april.biz",
-  //   new Address(
-  //     "Kulas Light",
-  //     "Apt. 556",
-  //     "Gwenborough",
-  //     "92998-3874",
-  //     [-37.3159, 81.1496]
-  // ),
-  //   "1-770-736-8031 x56442",
-  //   "hildegard.org",
-  //   new Company("Romaguera-Crona", "Multi-layered client-server neural-net", "harness real-time e-markets")
-  // );
+  users: User[];
 
-  users = USERS;
-  selectedUser: User;
-
-  constructor() { }
+  constructor( private userService: UserService) { }
 
   ngOnInit() {
+    this.getUsers();
   }
 
-  onSelect(user: User): void{
-    this.selectedUser = user;
+  getUsers(): void {
+    this.userService.getUsers()
+    .subscribe(users => this.users = users);
+  }
+ 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.userService.addUser({ name } as User)
+      .subscribe(user => {
+        this.users.push(user);
+      });
+  }
+ 
+  delete(user: User): void {
+    this.users = this.users.filter(h => h !== user);
+    this.userService.deleteUser(user).subscribe();
   }
 
 }
