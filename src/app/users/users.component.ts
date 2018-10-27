@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../user'
 import { UserService } from '../user.service';
+import { Address } from '../address';
+import { Company } from '../company';
 
 @Component({
   selector: 'app-users',
@@ -24,7 +26,8 @@ export class UsersComponent implements OnInit {
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.userService.addUser({ name } as User)
+    let temp = new User(Math.max(...this.users.map(user => user.id)) + 1, name, "", "", new Address("","","","",[0,0]), "","", new Company("","",""));
+    this.userService.addUser(temp)
       .subscribe(user => {
         this.users.push(user);
       });
